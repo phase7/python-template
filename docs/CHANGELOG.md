@@ -8,13 +8,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.3.0] - 2025-06-08
 
 ### Added
-- Version release with Click to Typer migration complete
-- Comprehensive test coverage maintained (87%)
-- Full documentation of migration process
+- Comprehensive Git Flow branching strategy documentation
+- Detailed workflow process for feature development
+- Branch rules and release strategy guidelines
 
 ### Changed
-- Finalized CLI migration to Typer framework
-- Enhanced error handling and user feedback
+- Updated .copilot-instructions.md with complete Git workflow
+- Enhanced development process documentation
+- Improved branching and tagging guidelines
+
+### Documentation
+- Added Git Flow visual diagram
+- Documented complete merge process (feature → develop → main)
+- Specified that all release tags are created on main branch
 
 ## [1.2.0] - 2025-06-08
 
