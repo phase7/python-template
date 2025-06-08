@@ -7,7 +7,7 @@ testable functions.
 
 import logging
 
-import click
+import typer
 from pydantic_settings import BaseSettings
 
 
@@ -84,10 +84,14 @@ def validate_input(input_value: str) -> bool:
     return bool(input_value and len(input_value.strip()) > 0)
 
 
-@click.command()
-@click.option("--data", default=None, help="Data to process")
-@click.option("--debug", is_flag=True, help="Enable debug logging")
-def cli(data: str | None, debug: bool) -> None:
+app = typer.Typer(help="Python Template CLI - A template for Python CLI applications.")
+
+
+@app.command()
+def cli(
+    data: str = typer.Option(None, help="Data to process"),
+    debug: bool = typer.Option(False, help="Enable debug logging"),
+) -> None:
     """Python Template CLI - A template for Python CLI applications.
 
     This command demonstrates the basic structure and patterns used
@@ -102,22 +106,22 @@ def cli(data: str | None, debug: bool) -> None:
 
     if data is not None and not validate_input(data):
         logger.error("Invalid input provided")
-        click.echo("Error: Invalid input provided", err=True)
+        typer.echo("Error: Invalid input provided", err=True)
         return
 
     try:
         result = process_data(data)
         logger.info("Processing completed successfully")
 
-        click.echo("Python Template Application")
-        click.echo(f"Status: {result['status']}")
-        click.echo(f"Input: {result['input']}")
-        click.echo(f"Processed: {result['processed']}")
-        click.echo(f"Timestamp: {result['timestamp']}")
+        typer.echo("Python Template Application")
+        typer.echo(f"Status: {result['status']}")
+        typer.echo(f"Input: {result['input']}")
+        typer.echo(f"Processed: {result['processed']}")
+        typer.echo(f"Timestamp: {result['timestamp']}")
 
     except Exception as e:
         logger.error(f"Processing failed: {e}")
-        click.echo(f"Error: {e}", err=True)
+        typer.echo(f"Error: {e}", err=True)
 
 
 def main() -> None:
@@ -126,7 +130,7 @@ def main() -> None:
     This function serves as the primary entry point and can be called
     directly or through the CLI interface.
     """
-    cli()
+    app()
 
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ A modern Python template library for miscellaneous operations and tools, built w
 - **Quality Tooling**: Integrated ruff (formatting/linting), typos (type checking), pytest (testing)
 - **Development Workflow**: Comprehensive Makefile with helpful commands
 - **Functional Programming**: Emphasizes simple, testable functions over complex classes
-- **CLI Interface**: Built-in command-line interface using Click
+- **CLI Interface**: Modern command-line interface using Typer with beautiful output
 - **Configuration Management**: Environment-based settings with Pydantic
 - **Comprehensive Testing**: Test-driven development with >85% coverage requirement
 - **Pre-commit Hooks**: Automated quality gates before commits
@@ -195,7 +195,7 @@ This template follows functional programming principles with an emphasis on:
 - **`Settings`**: Environment-based configuration using Pydantic
 - **`process_data()`**: Example data processing function
 - **`validate_input()`**: Input validation with business rules
-- **CLI**: Click-based command-line interface
+- **CLI**: Typer-based command-line interface with Rich formatting
 
 ## Testing
 

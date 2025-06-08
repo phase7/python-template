@@ -8,10 +8,11 @@ import logging
 from unittest.mock import MagicMock, patch
 
 import pytest
-from click.testing import CliRunner
+from typer.testing import CliRunner
 
 from python_template.main import (
     Settings,
+    app,
     cli,
     main,
     process_data,
@@ -165,7 +166,7 @@ class TestCLI:
     def test_cli_default_execution(self):
         """Test CLI with default parameters."""
         runner = CliRunner()
-        result = runner.invoke(cli, [])
+        result = runner.invoke(app, [])
 
         assert result.exit_code == 0
         assert "Python Template Application" in result.output
@@ -174,7 +175,7 @@ class TestCLI:
     def test_cli_with_data_parameter(self):
         """Test CLI with data parameter."""
         runner = CliRunner()
-        result = runner.invoke(cli, ["--data", "test_data"])
+        result = runner.invoke(app, ["--data", "test_data"])
 
         assert result.exit_code == 0
         assert "Input: test_data" in result.output
@@ -183,7 +184,7 @@ class TestCLI:
     def test_cli_with_debug_flag(self):
         """Test CLI with debug flag."""
         runner = CliRunner()
-        result = runner.invoke(cli, ["--debug"])
+        result = runner.invoke(app, ["--debug"])
 
         assert result.exit_code == 0
         assert "Status: success" in result.output
@@ -191,7 +192,7 @@ class TestCLI:
     def test_cli_with_empty_data(self):
         """Test CLI with empty data parameter."""
         runner = CliRunner()
-        result = runner.invoke(cli, ["--data", ""])
+        result = runner.invoke(app, ["--data", ""])
 
         assert result.exit_code == 0
         assert "Error: Invalid input provided" in result.output
@@ -199,7 +200,7 @@ class TestCLI:
     def test_cli_with_whitespace_data(self):
         """Test CLI with whitespace-only data."""
         runner = CliRunner()
-        result = runner.invoke(cli, ["--data", "   "])
+        result = runner.invoke(app, ["--data", "   "])
 
         assert result.exit_code == 0
         assert "Error: Invalid input provided" in result.output
@@ -208,12 +209,12 @@ class TestCLI:
 class TestMainFunction:
     """Test cases for the main function."""
 
-    @patch("python_template.main.cli")
-    def test_main_calls_cli(self, mock_cli):
-        """Test that main function calls CLI."""
+    @patch("python_template.main.app")
+    def test_main_calls_app(self, mock_app):
+        """Test that main function calls Typer app."""
         main()
 
-        mock_cli.assert_called_once()
+        mock_app.assert_called_once()
 
 
 class TestIntegration:
@@ -283,7 +284,6 @@ def test_module_imports():
     """Test that all required modules can be imported."""
     from python_template.main import (
         Settings,
-        cli,
         main,
         process_data,
         setup_logging,

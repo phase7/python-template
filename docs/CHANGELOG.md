@@ -5,25 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.3.0] - 2025-06-08
 
 ### Added
-- N/A
+- Version release with Click to Typer migration complete
+- Comprehensive test coverage maintained (87%)
+- Full documentation of migration process
 
 ### Changed
-- N/A
+- Finalized CLI migration to Typer framework
+- Enhanced error handling and user feedback
 
-### Deprecated
-- N/A
+## [1.2.0] - 2025-06-08
 
-### Removed
-- N/A
+### Changed
+- **CLI Framework**: Migrated from Click to Typer for improved developer experience and beautiful CLI output
+- **Type Safety**: CLI parameters now use Python type hints for better IDE support and validation
+- **User Experience**: Enhanced help output with Rich formatting and automatic shell completion support
 
-### Fixed
-- N/A
-
-### Security
-- N/A
+### Dependencies
+- Replaced `click>=8.0.0` with `typer>=0.16.0`
+- Added Rich formatting support (included with Typer)
 
 ## [1.1.0] - 2025-06-08
 
@@ -56,7 +58,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Development workflow with Make targets (20+ commands)
 - Quality tooling: ruff (formatting/linting), pytest (testing)
 - Pre-commit hooks for automated quality gates
-- CLI interface using Click with --data and --debug options
+- CLI interface using Typer with --data and --debug options
 - Configuration management with Pydantic Settings
 - Structured logging with correlation support
 - Complete documentation and development guidelines
