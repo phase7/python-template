@@ -71,7 +71,7 @@ lint-fix: ## Run ruff linting with auto-fix
 	$(UV) run ruff check --fix .
 
 .PHONY: all-checks
-all-checks: format-check lint test ## Run all quality checks
+all-checks: format-check lint test check-version ## Run all quality checks
 	@echo "$(GREEN)All checks passed!$(RESET)"
 
 .PHONY: pre-commit
@@ -138,3 +138,8 @@ info: ## Show project information
 	@echo "Python: $(shell $(PYTHON) --version)"
 	@echo "UV: $(shell $(UV) --version)"
 	@echo "Current directory: $(shell pwd)"
+
+.PHONY: check-version
+check-version: ## Check version consistency across all project files
+	@echo "$(BLUE)Checking version consistency...$(RESET)"
+	$(UV) run python scripts/check_version.py
