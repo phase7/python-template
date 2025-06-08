@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1] - 2025-06-08
+
+### Added
+- Comprehensive test-instructions.md with testing guidelines and best practices
+- Function-based testing documentation and examples
+
+### Changed
+- **Test Structure**: Converted all class-based tests to function-based tests following pytest best practices
+- **Test Organization**: Improved test readability with logical section separators and descriptive naming
+- **Testing Guidelines**: Updated .copilot-instructions.md to reflect function-based testing preference
+- **Test Alignment**: Aligned testing approach with functional programming paradigm
+
+### Improved
+- Test maintainability and consistency with project's functional programming philosophy
+- Test naming conventions for better clarity and understanding
+- Test structure organization without sacrificing coverage (maintained 87%)
+
 ## [1.3.0] - 2025-06-08
 
 ### Added
