@@ -4,7 +4,7 @@ This package provides a foundation for Python projects with modern development
 practices including type hints, comprehensive testing, and quality tooling.
 """
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 __author__ = "Your Name"
 __email__ = "your.email@example.com"
 

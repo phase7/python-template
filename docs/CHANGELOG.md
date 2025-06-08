@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Comprehensive .gitignore file for Python projects
+- N/A
 
 ### Changed
 - N/A
@@ -25,6 +25,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - N/A
 
+## [1.1.0] - 2025-06-08
+
+### Added
+- N/A
+
+### Changed
+- Simplified development toolchain by removing spell checking dependency
+
+### Deprecated
+- N/A
+
+### Removed
+- `typos` dependency and related spell checking functionality
+- `type-check` Make target (was incorrectly named, was actually running spell check)
+- Typos pre-commit hook
+
+### Fixed
+- N/A
+
+### Security
+- N/A
+
 ## [1.0.0] - 2025-06-08
 
 ### Added
@@ -32,7 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Core functionality with functional programming approach
 - Comprehensive test suite with >85% coverage requirement (currently 87%)
 - Development workflow with Make targets (20+ commands)
-- Quality tooling: ruff (formatting/linting), typos (type checking), pytest (testing)
+- Quality tooling: ruff (formatting/linting), pytest (testing)
 - Pre-commit hooks for automated quality gates
 - CLI interface using Click with --data and --debug options
 - Configuration management with Pydantic Settings

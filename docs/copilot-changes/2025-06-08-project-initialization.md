@@ -28,7 +28,7 @@ Initialized a complete Python template project following modern development prac
 ### Development Tooling
 - **uv** for fast dependency management
 - **ruff** for code formatting and linting
-- **typos** for type checking (following copilot instructions)
+- **typos** for spell checking (note: later removed in favor of simplicity)
 - **pytest** with coverage reporting
 - **pre-commit** hooks for quality gates
 - **click** for CLI interface
@@ -50,7 +50,6 @@ Initialized a complete Python template project following modern development prac
 - `make all-checks` - Run all quality checks
 - `make format` - Format code with ruff
 - `make lint` - Run linting
-- `make type-check` - Run type checking
 - `make run` - Run the application
 - `make build` - Build the package
 - `make clean` - Clean up artifacts

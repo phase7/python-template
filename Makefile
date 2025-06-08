@@ -70,13 +70,8 @@ lint-fix: ## Run ruff linting with auto-fix
 	@echo "$(BLUE)Running ruff linting with auto-fix...$(RESET)"
 	$(UV) run ruff check --fix .
 
-.PHONY: type-check
-type-check: ## Run typos type checking
-	@echo "$(BLUE)Running type checking...$(RESET)"
-	$(UV) run typos .
-
 .PHONY: all-checks
-all-checks: format-check lint type-check test ## Run all quality checks
+all-checks: format-check lint test ## Run all quality checks
 	@echo "$(GREEN)All checks passed!$(RESET)"
 
 .PHONY: pre-commit

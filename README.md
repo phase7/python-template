@@ -164,7 +164,6 @@ make all-checks
 # Individual checks
 make format      # Format code
 make lint        # Run linting
-make type-check  # Type checking
 ```
 
 ### Adding Dependencies
